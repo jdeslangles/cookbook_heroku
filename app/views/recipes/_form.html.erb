@@ -18,9 +18,9 @@
     </div>
     <div class="field">
       <%= f.label :ingredients %>
-      <% for ingredient in Ingredient.find(:all) %>
+      <% Ingredient.all.each do |ingredient| %>
       <div>
-        <%= check_box_tag "recipes[ingredient_ids][]", ingredient.id, @recipe.ingredients.include?(ingredient) %>
+        <%= check_box_tag "recipe[ingredient_ids][]", ingredient.id, @recipe.ingredients.include?(ingredient) %>
         <%= ingredient.name %>
       </div>
       <% end %>
