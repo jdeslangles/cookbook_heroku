@@ -1,8 +1,8 @@
-  <div class="span6 offset1">
+  <div class="span4 offset1">
     <% cycle("odd","even") %>
     <div class="coolrecipe">
     <table class="table">
-        <%=image_tag recipe.image, size: '325x250' %>
+        <%=image_tag recipe.image, size: '200x150' %>
       <tr>
         <th>Title</th>
         <td><%= recipe.title %></td>
@@ -12,10 +12,13 @@
       <tr>
         <th>Instructions</th>
         <td><%= recipe.instructions %></td>
-        <tr>
+      <tr>
+        <th>Category</th>
+        <td><%= recipe.categories.category_name if recipe.categories %></td>
+      <tr>
         <th>Ingredients</th>
         <td><% recipe.ingredients.each do |i| %>
-          <%= i.name %>
+          <%= i.name + ", " %>
           <%end%>
         </td>
         <tr>

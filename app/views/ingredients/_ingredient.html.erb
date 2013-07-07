@@ -2,7 +2,7 @@
     <% cycle("odd","even") %>
     <div class="coolingredient">
     <table class="table">
-     <!--    < %=image_tag ingredient.image, size: '325x250' % > -->
+    <%=image_tag ingredient.image_url, size: '200x150' %>
       <tr>
         <th>Name</th>
         <td><%= ingredient.name %></td>

@@ -9,6 +9,7 @@ class RecipesController < ApplicationController
 
   def edit
     @recipe = Recipe.find(params[:id])
+    @categories = Categories.all
   end
 
   def update
@@ -18,13 +19,14 @@ class RecipesController < ApplicationController
   end
 
   def create
-    @recipe = Recipe.new(params[:id])
+    @recipe = Recipe.new(params[:recipe])
     @recipe.save
     redirect_to @recipe
   end
 
   def new
     @recipe = Recipe.new
+    @categories = Categories.all
   end
 
   def destroy

@@ -1,12 +1,14 @@
-<div class="span6 offset1">
+<div class="span4 offset1">
   <%= form_for(@ingredient) do |f| %>
-
     <div class="field">
       <%= f.label :name %>
       <%= f.text_field :name %><br />
     </div>
+     <div class="field">
+      <%= f.label :image_url %>
+      <%= f.text_field :image_url %><br />
     <div class="field">
-      <%= f.label :recipes %>
+      <%= f.label :recipes, "Can be found in the following recipes:" %>
       <% for recipe in Recipe.find(:all) %>
       <div>
         <%= check_box_tag "ingredients[recipe_ids][]", recipe.id, @ingredient.recipes.include?(recipe) %>

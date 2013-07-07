@@ -18,7 +18,7 @@ def index
   end
 
   def create
-    @ingredient = Ingredient.new(params[:id])
+    @ingredient = Ingredient.new(params[:ingredient])
     @ingredient.save
     redirect_to @ingredient
   end

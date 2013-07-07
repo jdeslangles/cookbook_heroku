@@ -1,5 +1,7 @@
+<div class="span4 offset1">
 <h2>Ingredient details</h2>
 <br>
+<%=image_tag @ingredient.image_url, size: '300x200' %>
 <table class="table">
   <tr>
     <th>Name</th>
@@ -14,3 +16,4 @@
 <br>
  <%= link_to 'Edit', edit_ingredient_path(@ingredient.id)%>
   <%= link_to 'Destroy', ingredient_path(@ingredient.id), method: :delete, data: { confirm: 'Are you sure?' }%>
+</div>

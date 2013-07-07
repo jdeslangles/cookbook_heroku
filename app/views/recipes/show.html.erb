@@ -1,6 +1,7 @@
-<h2>Recipes details</h2>
+<div class="span4 offset1">
+  <h2>Recipes details</h2>
 <br>
-<%=image_tag @recipe.image, size: '600x450' %>
+<%=image_tag @recipe.image, size: '300x200' %>
 <table class="table">
   <tr>
     <th>Title</th>
@@ -12,6 +13,9 @@
     <th>Author</th>
     <td><%= @recipe.author %></td>
   <tr>
+    <th>Category</th>
+    <td><%= @recipe.categories.category_name if @recipe.categories %></td>
+  <tr>
     <th>Ingredients</th>
     <td><% @recipe.ingredients.each do |ingredient| %>
           <%= ingredient.name %>
@@ -21,3 +25,4 @@
 <br>
  <%= link_to 'Edit', edit_recipe_path(@recipe.id)%>
   <%= link_to 'Destroy', recipe_path(@recipe.id), method: :delete, data: { confirm: 'Are you sure?' }%>
+</div>
