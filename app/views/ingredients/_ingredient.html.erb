@@ -1,0 +1,27 @@
+  <div class="span4 offset1">
+    <% cycle("odd","even") %>
+    <div class="coolingredient">
+    <table class="table">
+     <!--    < %=image_tag ingredient.image, size: '325x250' % > -->
+      <tr>
+        <th>Name</th>
+        <td><%= ingredient.name %></td>
+        <tr>
+        <th>Found in:</th>
+        <td><% ingredient.recipes.each do |r| %>
+          <%= r.title %>
+          <%end%>
+        </td>
+        <tr>
+      </table>
+        <div class="links"><%= link_to 'See details', ingredient_path(ingredient)%>
+        <%= link_to 'Edit', edit_ingredient_path(ingredient)%>
+        <%= link_to 'Destroy', ingredient, method: :delete, data: { confirm: 'Are you sure?' }%>
+      </div>
+      <br><br>
+    </div>
+  </div>
+  <% if current_cycle == 'even' %>
+    </div>
+    <div class="row">
+    <% end %>

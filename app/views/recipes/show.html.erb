@@ -1,0 +1,23 @@
+<h2>Recipes details</h2>
+<br>
+<%=image_tag @recipe.image, size: '600x450' %>
+<table class="table">
+  <tr>
+    <th>Title</th>
+    <td><%= @recipe.title %></td>
+  <tr>
+    <th>Instructions</th>
+    <td><%= @recipe.instructions %></td>
+  <tr>
+    <th>Author</th>
+    <td><%= @recipe.author %></td>
+  <tr>
+    <th>Ingredients</th>
+    <td><% @recipe.ingredients.each do |ingredient| %>
+          <%= ingredient.name %>
+          <% end %>
+    </td>
+</table>
+<br>
+ <%= link_to 'Edit', edit_recipe_path(@recipe.id)%>
+  <%= link_to 'Destroy', recipe_path(@recipe.id), method: :delete, data: { confirm: 'Are you sure?' }%>

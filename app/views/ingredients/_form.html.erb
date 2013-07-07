@@ -1,0 +1,21 @@
+<div class="span6 offset1">
+  <%= form_for(@ingredient) do |f| %>
+
+    <div class="field">
+      <%= f.label :name %>
+      <%= f.text_field :name %><br />
+    </div>
+    <div class="field">
+      <%= f.label :recipes %>
+      <% for recipe in Recipe.find(:all) %>
+      <div>
+        <%= check_box_tag "ingredients[recipe_ids][]", recipe.id, @ingredient.recipes.include?(recipe) %>
+        <%= recipe.title %>
+      </div>
+      <% end %>
+    </div>
+    <br>
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+  <% end %>

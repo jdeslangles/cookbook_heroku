@@ -1,0 +1,16 @@
+<h2>Ingredient details</h2>
+<br>
+<table class="table">
+  <tr>
+    <th>Name</th>
+    <td><%= @ingredient.name %></td>
+  <tr>
+    <th>Can be found in:</th>
+    <td><% @ingredient.recipes.each do |recipe| %>
+          <%= recipe.name %>
+          <% end %>
+    </td>
+</table>
+<br>
+ <%= link_to 'Edit', edit_ingredient_path(@ingredient.id)%>
+  <%= link_to 'Destroy', ingredient_path(@ingredient.id), method: :delete, data: { confirm: 'Are you sure?' }%>

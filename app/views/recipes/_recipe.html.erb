@@ -1,0 +1,33 @@
+  <div class="span6 offset1">
+    <% cycle("odd","even") %>
+    <div class="coolrecipe">
+    <table class="table">
+        <%=image_tag recipe.image, size: '325x250' %>
+      <tr>
+        <th>Title</th>
+        <td><%= recipe.title %></td>
+      <tr>
+        <th>Author</th>
+        <td><%= recipe.author %></td>
+      <tr>
+        <th>Instructions</th>
+        <td><%= recipe.instructions %></td>
+        <tr>
+        <th>Ingredients</th>
+        <td><% recipe.ingredients.each do |i| %>
+          <%= i.name %>
+          <%end%>
+        </td>
+        <tr>
+      </table>
+        <div class="links"><%= link_to 'See details', recipe_path(recipe)%>
+        <%= link_to 'Edit', edit_recipe_path(recipe)%>
+        <%= link_to 'Destroy', recipe, method: :delete, data: { confirm: 'Are you sure?' }%>
+      </div>
+      <br><br>
+    </div>
+  </div>
+  <% if current_cycle == 'even' %>
+    </div>
+    <div class="row">
+    <% end %>

@@ -1,0 +1,33 @@
+<div class="span4 offset1">
+  <%= form_for(@recipe) do |f| %>
+    <div class="field">
+      <%= f.label :title %>
+      <%= f.text_field :title %><br />
+    </div>
+     <div class="field">
+      <%= f.label :author %>
+      <%= f.text_field :author %><br />
+    </div>
+    <div class="field">
+      <%= f.label :image %>
+      <%= f.text_field :image %><br />
+    </div>
+     <div class="field">
+      <%= f.label :instructions %>
+      <%= f.text_field :instructions %><br />
+    </div>
+    <div class="field">
+      <%= f.label :ingredients %>
+      <% for ingredient in Ingredient.find(:all) %>
+      <div>
+        <%= check_box_tag "recipes[ingredient_ids][]", ingredient.id, @recipe.ingredients.include?(ingredient) %>
+        <%= ingredient.name %>
+      </div>
+      <% end %>
+    </div>
+    <br>
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+  <% end %>
+</div>
