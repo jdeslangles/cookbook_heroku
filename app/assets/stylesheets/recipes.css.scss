@@ -1,3 +1,56 @@
 // Place all the styles related to the Recipes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+body {
+font-family:  helvetica;
+background-color: #FFFADB;
+color: #A34600;
+}
+th {
+  // font-family: american typewriter;
+  color: #A34600;
+}
+
+body h3 {
+  margin: 20px 0 0 20px;
+  font-family: american typewriter;
+}
+
+.header {
+  padding: 20px 0 0 0;
+  position: scroll;
+  background: image-url('banner.jpg') repeat top center fixed;
+  color: black;
+}
+.navbar {
+  width: 800px;
+  margin: 0 0 0 50px;
+  padding: 10px
+}
+header h1 {
+  font-family: sketchrockwell;
+  font-size: 90px;
+  color: white;
+  padding: 20px 0 0 0;
+  margin: 0 0 0 20px;
+}
+
+.coolrecipe {
+  color: black;
+  background-color: white;
+  border: #A34600 solid 2px;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 0 0 10px 0;
+}
+.coolrecipe a, footer a{
+ color: #C08408;
+ text-decoration: none;
+}
+.coolrecipe a:hover, .coolrecipe a:focus, footer a:hover, footer a:focus{
+  color: #A34600;
+}
+footer p {
+  padding: 20px 0 0 20px
+}

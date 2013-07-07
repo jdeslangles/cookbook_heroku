@@ -1,6 +1,6 @@
-  <div class="span4 offset1">
+  <div class="span3 offset1">
     <% cycle("odd","even") %>
-    <div class="coolingredient">
+    <div class="coolrecipe">
     <table class="table">
     <%=image_tag ingredient.image_url, size: '200x150' %>
       <tr>
@@ -14,11 +14,10 @@
         </td>
         <tr>
       </table>
-        <div class="links"><%= link_to 'See details', ingredient_path(ingredient)%>
-        <%= link_to 'Edit', edit_ingredient_path(ingredient)%>
-        <%= link_to 'Destroy', ingredient, method: :delete, data: { confirm: 'Are you sure?' }%>
+        <div class="links"><%= link_to 'See details,', ingredient_path(ingredient)%>
+        <%= link_to 'Edit,', edit_ingredient_path(ingredient)%>
+        <%= link_to 'Delete', ingredient, method: :delete, data: { confirm: 'Are you sure?' }%>
       </div>
-      <br><br>
     </div>
   </div>
   <% if current_cycle == 'even' %>

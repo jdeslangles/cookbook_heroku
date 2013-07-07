@@ -23,11 +23,10 @@
         </td>
         <tr>
       </table>
-        <div class="links"><%= link_to 'See details', recipe_path(recipe)%>
-        <%= link_to 'Edit', edit_recipe_path(recipe)%>
-        <%= link_to 'Destroy', recipe, method: :delete, data: { confirm: 'Are you sure?' }%>
+        <div class="links"><%= link_to 'See details,', recipe_path(recipe)%>
+        <%= link_to 'Edit,', edit_recipe_path(recipe)%>
+        <%= link_to 'Delete', recipe, method: :delete, data: { confirm: 'Are you sure?' }%>
       </div>
-      <br><br>
     </div>
   </div>
   <% if current_cycle == 'even' %>

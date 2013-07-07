@@ -1,19 +1,23 @@
-<div class="span4 offset1">
-<h2>Ingredient details</h2>
-<br>
-<%=image_tag @ingredient.image_url, size: '300x200' %>
-<table class="table">
-  <tr>
-    <th>Name</th>
-    <td><%= @ingredient.name %></td>
-  <tr>
-    <th>Can be found in:</th>
-    <td><% @ingredient.recipes.each do |recipe| %>
-          <%= recipe.name %>
-          <% end %>
-    </td>
-</table>
-<br>
- <%= link_to 'Edit', edit_ingredient_path(@ingredient.id)%>
-  <%= link_to 'Destroy', ingredient_path(@ingredient.id), method: :delete, data: { confirm: 'Are you sure?' }%>
+<h3>Ingredient details:</h3>
+<div class="row">
+  <div class="span5 offset1">
+    <br>
+    <div class="coolrecipe">
+    <%=image_tag @ingredient.image_url, size: '300x200' %>
+    <table class="table">
+      <tr>
+        <th>Name</th>
+        <td><%= @ingredient.name %></td>
+      <tr>
+        <th>Can be found in:</th>
+        <td><% @ingredient.recipes.each do |recipe| %>
+              <%= recipe.title %>
+              <% end %>
+        </td>
+    </table>
+    <br>
+    <%= link_to 'Edit,', edit_ingredient_path(@ingredient.id)%>
+      <%= link_to 'Delete', ingredient_path(@ingredient.id), method: :delete, data: { confirm: 'Are you sure?' }%>
+    </div>
+  </div>
 </div>
