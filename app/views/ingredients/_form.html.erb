@@ -12,11 +12,13 @@
     </div>
 
       <div class="field">
-
+        <p>Add to the following recipe(s)?</p>
         <%= hidden_field_tag "ingredient[recipe_ids][]", nil %>
         <% Recipe.all.each do |recipe| %>
-          <%= check_box_tag "ingredient[recipe_ids][]", recipe.id, @ingredient.recipe_ids.include?(recipe.id), id: dom_id(recipe) %>
-          <%= label_tag dom_id(recipe), recipe.title %>
+        <div>
+          <%= check_box_tag "ingredient[recipe_ids][]", recipe.id, @ingredient.recipe_ids.include?(recipe.id), id: dom_id(recipe) %><% label_tag dom_id(recipe), recipe.title %>
+          <%= recipe.title %>
+        </div>
         <% end %>
       </div>
     <br>
