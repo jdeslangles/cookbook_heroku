@@ -1,6 +1,7 @@
 class Recipe < ActiveRecord::Base
   belongs_to :categories
-  has_and_belongs_to_many :ingredients
+  has_many :ingredients_recipes
+  has_many :ingredients, through: :ingredients_recipes
   attr_accessible :author, :image, :instructions, :title, :ingredient_ids, :categories_id, :category_name
 
   validates :title, presence: true, uniqueness: true
