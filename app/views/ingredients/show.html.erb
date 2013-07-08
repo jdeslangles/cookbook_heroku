@@ -11,9 +11,8 @@
         <td><%= @ingredient.name %></td>
       <tr>
         <th>Can be found in:</th>
-        <td><% @ingredient.recipes.each do |recipe| %>
-              <%= recipe.title %>
-              <% end %>
+        <td>
+              <%= @ingredient.recipes.map(&:title).to_sentence %>
         </td>
     </table>
     <br>

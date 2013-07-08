@@ -8,9 +8,7 @@
         <td><%= ingredient.name %></td>
         <tr>
         <th>Found in:</th>
-        <td><% ingredient.recipes.each do |r| %>
-          <%= r.title %>
-          <%end%>
+        <td><%= ingredient.recipes.map(&:title).to_sentence %>
         </td>
         <tr>
       </table>

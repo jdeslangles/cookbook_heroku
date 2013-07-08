@@ -20,9 +20,7 @@
           <td><%= @recipe.categories.category_name if @recipe.categories %></td>
         <tr>
           <th>Ingredients</th>
-          <td><% @recipe.ingredients.each do |ingredient| %>
-                <%= ingredient.name %>
-                <% end %>
+          <td><%= @recipe.ingredients.map(&:name).to_sentence %>
           </td>
       </table>
       <br>
