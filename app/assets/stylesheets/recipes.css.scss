@@ -7,8 +7,12 @@ font-family:  helvetica;
 background-color: #FFFADB;
 color: #A34600;
 }
+
+.popup_login {
+margin: 20px 0 0 0;
+}
+
 th {
-  // font-family: american typewriter;
   color: #A34600;
 }
 
@@ -16,20 +20,27 @@ body h3 {
   margin: 20px 0 0 20px;
   font-family: american typewriter;
 }
+.container {
+}
 
 .header {
-  padding: 20px 0 0 0;
+  // position: absolute;
+}
+.banner {
+  // position: absolute;
+  height: 170px;
+  width: auto;
   position: scroll;
   background: image-url('banner.jpg') repeat top center fixed;
   color: black;
 }
 
-header h1 {
+h1 {
   font-family: sketchrockwell;
   font-size: 90px;
   color: white;
-  padding: 20px 0 0 0;
-  margin: 0 0 0 20px;
+  padding: 0;
+  margin: 40px 20px 20px 20px;
 }
 
 .coolrecipe {
