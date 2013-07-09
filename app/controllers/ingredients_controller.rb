@@ -1,5 +1,7 @@
 class IngredientsController < ApplicationController
-def index
+  load_and_authorize_resource
+
+  def index
     @ingredients = Ingredient.all
   end
 

@@ -16,8 +16,12 @@
         </td>
     </table>
     <br>
-    <%= link_to 'Edit,', edit_ingredient_path(@ingredient.id)%>
-      <%= link_to 'Delete', ingredient_path(@ingredient.id), method: :delete, data: { confirm: 'Are you sure?' }%>
+      <% if can? :edit, Ingredient %>
+        <%= link_to 'Edit', edit_ingredient_path(@ingredient.id)%>
+      <%end%>
+      <% if can? :delete, Ingredient %>
+        <%= link_to '- Delete', ingredient_path(@ingredient.id), method: :delete, data: { confirm: 'Are you sure?' }%>
+      <%end%>
     </div>
   </div>
 </div>
