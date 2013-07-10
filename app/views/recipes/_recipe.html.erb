@@ -2,7 +2,7 @@
     <% cycle("1","2", "3") %>
     <div class="coolrecipe recipe">
     <table class="table">
-        <%=image_tag recipe.image, size: '200x150' if recipe.image %>
+        <%=image_tag recipe.recipe_image.thumb.url if recipe.recipe_image %>
       <tr>
         <th>Title</th>
         <td><%= recipe.title %></td>

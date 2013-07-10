@@ -12,7 +12,8 @@ class UsersController < ApplicationController
   def create
     @user = User.new(params[:user])
     if @user.save
-      redirect_to users_path
+      session[:user_id] ||= @user.id  #allows a newly created user to be logged in immediately
+      redirect_to root_path
     else
       render 'new'
     end
