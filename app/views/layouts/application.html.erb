@@ -31,6 +31,7 @@
             <li><%= link_to('Add ingredient', new_ingredient_path)  %></li>
               <% end %>
             <li><%= link_to('Members', users_path)  %></li>
+            <li><%= link_to('Search', new_search_path)  %></li>
             <li><%= link_to('Sign up', new_user_path)  %></li>
             <li><% if current_user %><%= link_to 'Logout', session_path(session), method: :delete, data: { confirm: 'Are you sure?' } %>
               <% else %>

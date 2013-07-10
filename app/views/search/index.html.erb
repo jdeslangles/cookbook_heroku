@@ -1,0 +1,20 @@
+<h3>What are you searching for?</h3>
+<%= render 'shared/alert_message' %>
+<% if flash %>
+  <p><%= flash[:error] %></p>
+<% end %>
+<br>
+<div class="row">
+
+<%= search_form_for @q, url: search_path, html: {method: :post} do |f| %>
+  <p><%= f.label :title_cont %><%= f.text_field :title_cont %>
+  </p>
+  <p><%= f.label :author_cont %><%= f.text_field :author_cont %></p>
+  <p><%= f.label :instructions_cont %><%= f.text_field :instructions_cont %></p>
+   <p><%= f.submit %></p>
+   <% end %>
+
+
+<%= render @recipes %>
+
+</div>
