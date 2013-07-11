@@ -17,7 +17,7 @@ class RecipesController < ApplicationController
   def update
     @recipe = Recipe.find(params[:id])
     @categories = Categories.all
-    params[:recipe][:ingredient_ids] ||= [] if params[:recipe]
+    # params[:recipe][:ingredient_ids] ||= [] if params[:recipe]
     if @recipe.update_attributes(params[:recipe])
       redirect_to @recipe, notice: "Successfully updated the recipe!"
     else
@@ -28,7 +28,7 @@ class RecipesController < ApplicationController
   def create
     @recipe = Recipe.new(params[:recipe])
     @categories = Categories.all
-    params[:recipe][:ingredient_ids] ||= [] if params[:recipe]
+    # params[:recipe][:ingredient_ids] ||= [] if params[:recipe]
     if @recipe.save
       redirect_to @recipe, notice: "Successfully added the new recipe to our database!"
     else
