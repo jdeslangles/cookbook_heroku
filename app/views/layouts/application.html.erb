@@ -6,7 +6,7 @@
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
-<body>
+<body style="background-image: url(<%= define_background %>); background-size: cover;">
   <div class="banner">
   </div>
   <div class="container">
@@ -42,6 +42,7 @@
         </nav>
       </div>
     </div>
+
       <%= yield %>
   </div>
 
