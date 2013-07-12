@@ -6,7 +6,7 @@ module ApplicationHelper
     elsif @ingredient
      @ingredient.ingredient_image.url
     else
-      raw "'/assets/leather.png'"
+      raw "'/assets/texture3.jpg'"
      end
   end
 end

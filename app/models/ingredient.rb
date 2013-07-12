@@ -6,7 +6,7 @@ class Ingredient < ActiveRecord::Base
 
 
   validates :name, presence: true, uniqueness: true
-  validates :image_url, presence: true
+  # validates :image_url, presence: true
 
   mount_uploader :ingredient_image, IngredientImageUploader
 end
